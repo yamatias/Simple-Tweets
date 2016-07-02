@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:id="@+id/ivProfileImage"
+        android:clickable="true"
+
+        android:focusable="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvName"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvBody"
+        android:layout_alignBottom="@+id/ivProfileImage"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_marginLeft="5dp"
+        android:maxLines="2"
+        android:minLines="2"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvTimestamp"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="10sp"
+        android:padding="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignBottom="@+id/tvUsername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/tvUsername"
+        android:layout_marginLeft="5dp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_toRightOf="@+id/tvName"
+        android:layout_toEndOf="@+id/tvName" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:id="@+id/ivMediaImage"
+        android:layout_below="@+id/tvBody"
+
+        android:layout_alignLeft="@+id/tvBody"
+        android:layout_alignStart="@+id/tvBody"
+        android:layout_toLeftOf="@+id/tvTimestamp"
+        android:layout_toStartOf="@+id/tvTimestamp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ivMediaImage"
+        android:layout_alignLeft="@+id/ivMediaImage"
+        android:layout_alignStart="@+id/ivMediaImage"
+        android:layout_alignRight="@+id/ivMediaImage"
+        android:layout_alignEnd="@+id/ivMediaImage"
+        android:id="@+id/linearLayout">
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:background="@drawable/ic_action_reply"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/ibReply" />
+    </LinearLayout>
+
+</RelativeLayout>
