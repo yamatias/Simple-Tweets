@@ -1,7 +1,5 @@
 package com.codepath.apps.mysimpletweets.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.Log;
 
 import com.codepath.apps.TimeFormatter;
@@ -10,11 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 //Class parses JSON and stores data, then encapsulates any logic about the data
-public class Tweet implements Parcelable {
+public class Tweet implements Serializable {
 
     public String getBody() {
         return body;
@@ -95,39 +94,39 @@ public class Tweet implements Parcelable {
         return tweetArrayList;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(this.user,flags);
-        dest.writeString(this.body);
-        dest.writeLong(this.id);
-        dest.writeString(this.createdAt);
-        dest.writeString(this.timestamp);
-        dest.writeString(this.imageMediaLink);
-    }
-
-    protected Tweet(Parcel in) {
-        this.user = in.readParcelable(User.class.getClassLoader()); //FIX THIS
-        this.body = in.readString();
-        this.id = in.readLong();
-        this.createdAt = in.readString();
-        this.timestamp = in.readString();
-        this.imageMediaLink = in.readString();
-    }
-
-    public static final Parcelable.Creator<Tweet> CREATOR = new Parcelable.Creator<Tweet>() {
-        @Override
-        public Tweet createFromParcel(Parcel source) {
-            return new Tweet(source);
-        }
-
-        @Override
-        public Tweet[] newArray(int size) {
-            return new Tweet[size];
-        }
-    };
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeSerializable(this.user);
+//        dest.writeString(this.body);
+//        dest.writeLong(this.id);
+//        dest.writeString(this.createdAt);
+//        dest.writeString(this.timestamp);
+//        dest.writeString(this.imageMediaLink);
+//    }
+//
+//    protected Tweet(Parcel in) {
+//        this.user = (User)in.readSerializable(); //FIX THIS
+//        this.body = in.readString();
+//        this.id = in.readLong();
+//        this.createdAt = in.readString();
+//        this.timestamp = in.readString();
+//        this.imageMediaLink = in.readString();
+//    }
+//
+//    public static final Parcelable.Creator<Tweet> CREATOR = new Parcelable.Creator<Tweet>() {
+//        @Override
+//        public Tweet createFromParcel(Parcel source) {
+//            return new Tweet(source);
+//        }
+//
+//        @Override
+//        public Tweet[] newArray(int size) {
+//            return new Tweet[size];
+//        }
+//    };
 }
